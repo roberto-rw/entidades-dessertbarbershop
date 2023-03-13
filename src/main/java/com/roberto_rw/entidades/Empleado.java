@@ -1,15 +1,18 @@
 package com.roberto_rw.entidades;
 
 import jakarta.persistence.*;
-import lombok.Builder;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
 @Table(name = "empleados")
 @Data
-@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Empleado {
     @Id
     @GeneratedValue( strategy = GenerationType.IDENTITY )
@@ -29,7 +32,7 @@ public class Empleado {
     private LocalDateTime horaEntrada;
     @Column
     private LocalDateTime horaSalida;
-    @OneToMany(mappedBy = "empleado")
+    @OneToMany(mappedBy = "empleado",cascade = CascadeType.ALL)
     private List<Cita> citas;
 
 }

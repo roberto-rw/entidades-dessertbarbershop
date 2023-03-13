@@ -1,15 +1,17 @@
 package com.roberto_rw.entidades;
 
 import jakarta.persistence.*;
-import lombok.Builder;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "ventas")
 @Data
-@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Venta {
     @Id
     @GeneratedValue( strategy = GenerationType.IDENTITY )
@@ -24,10 +26,13 @@ public class Venta {
     @Column
     private Double subtotal;
     @ManyToOne
+    @JoinColumn( name = "id_servicio")
     private Servicio servicio;
     @ManyToOne
+    @JoinColumn( name = "id_usuario")
     private Usuario usuario;
     @ManyToOne
+    @JoinColumn( name = "id_cliente")
     private Cliente cliente;
 
 }

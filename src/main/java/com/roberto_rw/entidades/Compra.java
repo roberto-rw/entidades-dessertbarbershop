@@ -1,8 +1,9 @@
 package com.roberto_rw.entidades;
 
 import jakarta.persistence.*;
-import lombok.Builder;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -10,7 +11,8 @@ import java.util.List;
 @Entity
 @Table( name = "compras")
 @Data
-@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Compra {
     @Id
     @GeneratedValue( strategy = GenerationType.IDENTITY )
@@ -20,6 +22,9 @@ public class Compra {
     private LocalDateTime fechaHora;
     @Column
     private Double total;
-    @OneToMany(mappedBy = "compra")
+    @ManyToOne
+    @JoinColumn( name = "id_usuario")
+    private Usuario usuario;
+    @OneToMany(mappedBy = "compra", cascade = CascadeType.ALL)
     private List<DetalleCompra> compras;
 }

@@ -1,13 +1,15 @@
 package com.roberto_rw.entidades;
 
 import jakarta.persistence.*;
-import lombok.Builder;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table( name = "productos")
 @Data
-@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Producto {
     @Id
     @GeneratedValue( strategy = GenerationType.IDENTITY )

@@ -2,15 +2,17 @@ package com.roberto_rw.entidades;
 
 import com.roberto_rw.enums.Categoria;
 import jakarta.persistence.*;
-import lombok.Builder;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "citas")
 @Data
-@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Cita {
     @Id
     @GeneratedValue( strategy = GenerationType.IDENTITY )
@@ -24,11 +26,15 @@ public class Cita {
     @Enumerated(EnumType.STRING)
     private Categoria categoria;
     @ManyToOne
+    @JoinColumn( name = "id_empleado")
     private Empleado empleado;
     @ManyToOne
+    @JoinColumn( name = "id_servicio")
     private Servicio servicio;
-    @ManyToOne
+    @ManyToOne(optional = true)
+    @JoinColumn( name = "id_cliente")
     private Cliente cliente;
     @ManyToOne
+    @JoinColumn( name = "id_usuario")
     private Usuario usuario;
 }

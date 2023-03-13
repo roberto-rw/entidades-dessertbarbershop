@@ -9,53 +9,112 @@ import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
 public class Main {
+
+    private static EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("myPersistenceUnit");
+    private static EntityManager em = entityManagerFactory.createEntityManager();
     public static void main(String[] args) {
-        System.out.println("Hello world!");
 
-        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("myPersistenceUnit");
-        EntityManager em = entityManagerFactory.createEntityManager();
 
-//        Empleado e = Empleado.builder().build();
-//        LocalDateTime fechaInicio = LocalDateTime.of(2022, 03, 05, 15, 30, 0, 0);
-//        LocalDateTime fechaFin = LocalDateTime.of(2022, 03, 05, 15, 30, 0, 0);
-//        e.setHoraEntrada(fechaInicio);
-//        e.setHoraSalida(fechaFin);
-//        e.setNombre("Pablo");
-//        e.setPuesto("Recepcionista");
-//        e.setSalario(3.5);
-//        e.setTelefono("8932498398");
-//        e.setApellido("Pacheco");
+
+
+
+//        Cliente cliente = em.find(Cliente.class, 1L);
+//        System.out.println("Cliente: " + cliente.getNombre());
 //
-//        Servicio servicio = Servicio.builder().precio(200d)
-//                                            .descripcion("Servicio avanzado muy avanzado (Corte de BadBunny)")
-//                                            .categoria(Categoria.AVANZADO).build();
-
-//        Usuario user = Usuario.builder().nombreCompleto("Enrique Vega Vega Del Cid")
-//                        .nombreUsuario("VDC")
-//                                .contrasenia("1234")
-//                                        .rol(Rol.ADMINISTRADOR)
-//                                        .build();
+//        Empleado empleado = em.find(Empleado.class, 1L);
+//        System.out.println("Empleado: " + empleado.getNombre());
 //
+//        Usuario usuario = em.find(Usuario.class, 1L);
+//        System.out.println("Usuario: " + usuario.getNombreUsuario() + " ROL: " + usuario.getRol());
 //
-//        Cliente client = Cliente.builder().nombre("Artur")
-//                        .telefono("2222222")
-//                                .correo("artur@gmail.com")
-//                                        .build();
+//        Servicio servicio = em.find(Servicio.class, 1L);
+//        System.out.println("Servicio: " + servicio.getDescripcion());
 
+
+//        Cita cita = new Cita();
+//        cita.setCategoria(Categoria.AVANZADO);
+//        cita.setEmpleado(empleado);
+//        cita.setCliente(cliente);
+//        cita.setUsuario(usuario);
+//        cita.setServicio(servicio);
+//        cita.setFechaInicio(LocalDateTime.now());
+//        cita.setFechaFin(LocalDateTime.now());
+
+//        for (Cita cita: cliente.getCitas()){
+//            cliente.eliminarCita(cita);
+//        }
+
+//        em.remove(cliente);
 
         em.getTransaction().begin();
-        Servicio s = em.find(Servicio.class, 1L );
+        Servicio servicio = em.find(Servicio.class, 1L);
+        System.out.println(servicio.getDescripcion());
+
         em.getTransaction().commit();
 
-        Cita cita = Cita.builder()
-                        .fechaInicio(LocalDateTime.of(2022, 03, 06, 19, 0, 0, 0))
-                                .fechaFin(LocalDateTime.of(2022, 03, 06, 20, 0, 0, 0))
-                                        .servicio(s)
-                                                .build();
 
+    }
+
+    static void agregarCita(Cita cita){
         em.getTransaction().begin();
         em.persist(cita);
         em.getTransaction().commit();
+    }
 
+    static void eliminarCita(Long id){
+        em.getTransaction().begin();
+        Cita cita = em.find(Cita.class, id);
+        em.remove(cita);
+        em.getTransaction().commit();
+    }
+
+    static void actualizarCita(Long id){
+        em.getTransaction().begin();
+        Cita cita = em.find(Cita.class, id);
+        em.persist(cita);
+        em.getTransaction().commit();
+    }
+
+    static Servicio crearServicio(){
+        Servicio servicio = new Servicio();
+        servicio.setCategoria(Categoria.AVANZADO);
+        servicio.setPrecio(120.0);
+        servicio.setDescripcion("Corte de BadBunny");
+
+        return servicio;
+    }
+
+    static Empleado crearEmpleado(){
+        Empleado empleado = new Empleado();
+        empleado.setNombre("Roberto");
+        empleado.setApellido("RW");
+        empleado.setTelefono("1234");
+        empleado.setHoraSalida(LocalDateTime.now());
+        empleado.setHoraSalida(LocalDateTime.now());
+        empleado.setPuesto("Peluquero");
+
+
+        return empleado;
+    }
+
+    static Usuario crearUsuario(){
+        Usuario usuario = new Usuario();
+        usuario.setNombreUsuario("VDC");
+        usuario.setNombreCompleto("Enrique Vega Del Cid");
+        usuario.setRol(Rol.ADMINISTRADOR);
+        usuario.setContrasenia("1234");
+
+
+        return  usuario;
+    }
+
+    static Cliente crearCliente(){
+        Cliente cliente = new Cliente();
+        cliente.setNombre("Roberto");
+        cliente.setCorreo("robertorw7@gmail.com");
+        cliente.setTelefono("12345");
+
+
+        return  cliente;
     }
 }

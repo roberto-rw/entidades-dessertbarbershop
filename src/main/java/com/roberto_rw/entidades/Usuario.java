@@ -2,15 +2,17 @@ package com.roberto_rw.entidades;
 
 import com.roberto_rw.enums.Rol;
 import jakarta.persistence.*;
-import lombok.Builder;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
 @Entity
 @Table(name = "usuarios")
 @Data
-@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Usuario {
     @Id
     @GeneratedValue( strategy = GenerationType.IDENTITY )
@@ -27,8 +29,8 @@ public class Usuario {
     private Rol rol;
     @OneToMany(mappedBy = "usuario")
     private List<Cita> citas;
-    @OneToMany
+    @OneToMany(mappedBy = "usuario")
     private List<Compra> compras;
-    @OneToMany
+    @OneToMany(mappedBy = "usuario")
     private List<Venta> ventas;
 }
