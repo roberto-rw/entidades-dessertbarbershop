@@ -31,4 +31,8 @@ public class Servicio {
     @OneToMany(mappedBy = "servicio", cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private List<Venta> ventas;
 
+    @Override
+    public String toString() {
+        return this.getCategoria().toString();
+    }
 }

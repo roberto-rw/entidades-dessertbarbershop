@@ -28,4 +28,8 @@ public class Cliente {
     @OneToMany(mappedBy = "cliente", cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private List<Venta> ventas;
 
+    @Override
+    public String toString() {
+        return this.getNombre();
+    }
 }
