@@ -35,4 +35,8 @@ public class Empleado {
     @OneToMany(mappedBy = "empleado",cascade = CascadeType.ALL)
     private List<Cita> citas;
 
+    @Override
+    public String toString() {
+        return getNombre();
+    }
 }
