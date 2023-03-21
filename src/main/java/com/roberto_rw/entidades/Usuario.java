@@ -33,4 +33,9 @@ public class Usuario {
     private List<Compra> compras;
     @OneToMany(mappedBy = "usuario")
     private List<Venta> ventas;
+
+    @Override
+    public String toString() {
+        return this.nombreUsuario;
+    }
 }
