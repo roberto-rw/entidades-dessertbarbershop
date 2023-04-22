@@ -7,6 +7,7 @@ import com.roberto_rw.enums.Rol;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 public class Main {
 
@@ -47,8 +48,8 @@ public class Main {
 //        em.remove(cliente);
 
         em.getTransaction().begin();
-        Servicio servicio = em.find(Servicio.class, 1L);
-        System.out.println(servicio.getDescripcion());
+//        Servicio servicio = em.find(Servicio.class, 1L);
+//        System.out.println(servicio.getDescripcion());
 
         em.getTransaction().commit();
 
@@ -89,8 +90,8 @@ public class Main {
         empleado.setNombre("Roberto");
         empleado.setApellido("RW");
         empleado.setTelefono("1234");
-        empleado.setHoraSalida(LocalDateTime.now());
-        empleado.setHoraSalida(LocalDateTime.now());
+        empleado.setHoraSalida(LocalTime.now());
+        empleado.setHoraSalida(LocalTime.now());
         empleado.setPuesto("Peluquero");
 
 
