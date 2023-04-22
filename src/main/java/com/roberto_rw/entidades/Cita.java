@@ -22,9 +22,6 @@ public class Cita {
     private LocalDateTime fechaInicio;
     @Column
     private LocalDateTime fechaFin;
-    @Column
-    @Enumerated(EnumType.STRING)
-    private Categoria categoria;
     @ManyToOne
     @JoinColumn( name = "id_empleado")
     private Empleado empleado;

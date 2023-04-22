@@ -33,6 +33,6 @@ public class Servicio {
 
     @Override
     public String toString() {
-        return this.getCategoria().toString();
+        return this.getDescripcion();
     }
 }
