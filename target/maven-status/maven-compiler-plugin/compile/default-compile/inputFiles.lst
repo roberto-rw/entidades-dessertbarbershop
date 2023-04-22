@@ -1,13 +1,13 @@
-D:\Documentos HDD\Sexto Semestre\Proyecto de Software Integrador\DessertBarbershop\EntidadesDessertBarbershop\src\main\java\com\roberto_rw\entidades\Compra.java
-D:\Documentos HDD\Sexto Semestre\Proyecto de Software Integrador\DessertBarbershop\EntidadesDessertBarbershop\src\main\java\com\roberto_rw\entidades\Cliente.java
-D:\Documentos HDD\Sexto Semestre\Proyecto de Software Integrador\DessertBarbershop\EntidadesDessertBarbershop\src\main\java\com\roberto_rw\enums\Rol.java
-D:\Documentos HDD\Sexto Semestre\Proyecto de Software Integrador\DessertBarbershop\EntidadesDessertBarbershop\src\main\java\com\roberto_rw\entidades\Usuario.java
-D:\Documentos HDD\Sexto Semestre\Proyecto de Software Integrador\DessertBarbershop\EntidadesDessertBarbershop\src\main\java\com\roberto_rw\entidades\Producto.java
-D:\Documentos HDD\Sexto Semestre\Proyecto de Software Integrador\DessertBarbershop\EntidadesDessertBarbershop\src\main\java\com\roberto_rw\entidades\Venta.java
-D:\Documentos HDD\Sexto Semestre\Proyecto de Software Integrador\DessertBarbershop\EntidadesDessertBarbershop\src\main\java\com\roberto_rw\entidades\DetalleCompra.java
-D:\Documentos HDD\Sexto Semestre\Proyecto de Software Integrador\DessertBarbershop\EntidadesDessertBarbershop\src\main\java\com\roberto_rw\entidades\Empleado.java
-D:\Documentos HDD\Sexto Semestre\Proyecto de Software Integrador\DessertBarbershop\EntidadesDessertBarbershop\src\main\java\com\roberto_rw\entidades\DetalleVentaProducto.java
-D:\Documentos HDD\Sexto Semestre\Proyecto de Software Integrador\DessertBarbershop\EntidadesDessertBarbershop\src\main\java\com\roberto_rw\entidades\Servicio.java
-D:\Documentos HDD\Sexto Semestre\Proyecto de Software Integrador\DessertBarbershop\EntidadesDessertBarbershop\src\main\java\com\roberto_rw\enums\Categoria.java
-D:\Documentos HDD\Sexto Semestre\Proyecto de Software Integrador\DessertBarbershop\EntidadesDessertBarbershop\src\main\java\com\roberto_rw\Main.java
-D:\Documentos HDD\Sexto Semestre\Proyecto de Software Integrador\DessertBarbershop\EntidadesDessertBarbershop\src\main\java\com\roberto_rw\entidades\Cita.java
+D:\Documentos\DessertBarberShop - Backend\entidades-dessertbarbershop\src\main\java\com\roberto_rw\entidades\Cita.java
+D:\Documentos\DessertBarberShop - Backend\entidades-dessertbarbershop\src\main\java\com\roberto_rw\entidades\Servicio.java
+D:\Documentos\DessertBarberShop - Backend\entidades-dessertbarbershop\src\main\java\com\roberto_rw\entidades\Compra.java
+D:\Documentos\DessertBarberShop - Backend\entidades-dessertbarbershop\src\main\java\com\roberto_rw\entidades\Usuario.java
+D:\Documentos\DessertBarberShop - Backend\entidades-dessertbarbershop\src\main\java\com\roberto_rw\enums\Rol.java
+D:\Documentos\DessertBarberShop - Backend\entidades-dessertbarbershop\src\main\java\com\roberto_rw\entidades\Producto.java
+D:\Documentos\DessertBarberShop - Backend\entidades-dessertbarbershop\src\main\java\com\roberto_rw\entidades\Empleado.java
+D:\Documentos\DessertBarberShop - Backend\entidades-dessertbarbershop\src\main\java\com\roberto_rw\entidades\Cliente.java
+D:\Documentos\DessertBarberShop - Backend\entidades-dessertbarbershop\src\main\java\com\roberto_rw\entidades\DetalleVentaProducto.java
+D:\Documentos\DessertBarberShop - Backend\entidades-dessertbarbershop\src\main\java\com\roberto_rw\entidades\Venta.java
+D:\Documentos\DessertBarberShop - Backend\entidades-dessertbarbershop\src\main\java\com\roberto_rw\enums\Categoria.java
+D:\Documentos\DessertBarberShop - Backend\entidades-dessertbarbershop\src\main\java\com\roberto_rw\Main.java
+D:\Documentos\DessertBarberShop - Backend\entidades-dessertbarbershop\src\main\java\com\roberto_rw\entidades\DetalleCompra.java

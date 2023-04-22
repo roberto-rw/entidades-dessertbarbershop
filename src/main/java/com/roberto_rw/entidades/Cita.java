@@ -37,4 +37,8 @@ public class Cita {
     @ManyToOne
     @JoinColumn( name = "id_usuario")
     private Usuario usuario;
+    @Override
+    public int hashCode() {
+        return id.hashCode();
+    }
 }
